@@ -1,12 +1,25 @@
+# Dependencies
+/node_modules
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+
+# Production
+/build
+
 # Archives / backups
 *.rar
 *.zip
 
-# Local tooling
+# Local tooling & env
 .claude/settings.local.json
 .vercel/
-node_modules/
+.env*.local
 
-# OS
+# OS / logs
 .DS_Store
 Thumbs.db
+*.log
+npm-debug.log*
