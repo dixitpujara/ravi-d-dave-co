@@ -320,6 +320,11 @@
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .form-card .btn { width: 100%; margin-top: 6px; }
   .form-note { font-size: 0.82rem; color: var(--muted); text-align: center; margin-top: 14px; }
+  .form-status { font-size: 0.92rem; font-weight: 600; text-align: center; margin-top: 14px; display: none; }
+  .form-status.show { display: block; }
+  .form-status.ok { color: #1a8a3b; }
+  .form-status.err { color: #b3442e; }
+  #formSubmit[disabled] { opacity: 0.72; cursor: progress; }
 
   /* footer */
   footer { background: var(--brand); color: rgba(255,255,255,0.72); padding: 64px 0 30px; }

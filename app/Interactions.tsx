@@ -71,32 +71,72 @@ export default function Interactions() {
     // contact form -> mailto
     const form = document.getElementById("enquiryForm") as HTMLFormElement | null;
     if (form) {
-      const onSubmit = (e: Event) => {
+      const statusEl = document.getElementById("formStatus");
+      const submitBtn = document.getElementById("formSubmit") as HTMLButtonElement | null;
+      const btnLabel = submitBtn?.querySelector(".btn-label") as HTMLElement | null;
+      const g = (id: string) =>
+        ((document.getElementById(id) as HTMLInputElement | null)?.value || "").trim();
+
+      const setStatus = (msg: string, kind: "ok" | "err" | "") => {
+        if (!statusEl) return;
+        statusEl.textContent = msg;
+        statusEl.className = "form-status" + (kind ? " show " + kind : "");
+      };
+
+      const onSubmit = async (e: Event) => {
         e.preventDefault();
-        const g = (id: string) =>
-          ((document.getElementById(id) as HTMLInputElement | null)?.value || "").trim();
         const name = g("f-name");
         const phone = g("f-phone");
-        const email = g("f-email");
-        const service = g("f-service");
-        const msg = g("f-msg");
         if (!name || !phone) {
-          alert("Please enter your name and phone number.");
+          setStatus("Please enter your name and phone number.", "err");
           return;
         }
-        const subject = encodeURIComponent(
-          "Enquiry from " + name + (service ? " — " + service : "")
-        );
-        const body = encodeURIComponent(
-          "Name: " + name + "\n" +
-            "Phone: " + phone + "\n" +
-            "Email: " + (email || "-") + "\n" +
-            "Service: " + (service || "-") + "\n\n" +
-            "Message:\n" + (msg || "-")
-        );
-        window.location.href =
-          "mailto:caravidave33@gmail.com?subject=" + subject + "&body=" + body;
+        const payload = {
+          name,
+          phone,
+          email: g("f-email"),
+          service: g("f-service"),
+          message: g("f-msg"),
+          botcheck: g("f-botcheck"),
+        };
+
+        if (submitBtn) submitBtn.disabled = true;
+        if (btnLabel) btnLabel.textContent = "Sending…";
+        setStatus("", "");
+
+        try {
+          const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          const out = (await res.json().catch(() => ({}))) as {
+            ok?: boolean;
+            error?: string;
+          };
+          if (res.ok && out.ok) {
+            form.reset();
+            setStatus(
+              "Thank you — your message has been sent. We'll be in touch shortly.",
+              "ok"
+            );
+          } else {
+            setStatus(
+              out.error || "Sorry, that didn't send. Please call or WhatsApp us.",
+              "err"
+            );
+          }
+        } catch {
+          setStatus(
+            "Network error. Please check your connection, or call or WhatsApp us.",
+            "err"
+          );
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+          if (btnLabel) btnLabel.textContent = "Send Message";
+        }
       };
+
       form.addEventListener("submit", onSubmit);
       cleanups.push(() => form.removeEventListener("submit", onSubmit));
     }

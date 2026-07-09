@@ -318,11 +318,13 @@ export const SITE_MARKUP = String.raw`
           <label for="f-msg">Message</label>
           <textarea id="f-msg" name="message" placeholder="Tell us briefly how we can help…"></textarea>
         </div>
-        <button class="btn btn-primary" type="submit">
-          Send Message
+        <input type="text" name="botcheck" id="f-botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+        <button class="btn btn-primary" type="submit" id="formSubmit">
+          <span class="btn-label">Send Message</span>
           <svg class="ico" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
         </button>
-        <p class="form-note">This opens your email app with the details filled in.</p>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="form-note">We'll reply by phone or email, usually within one business day.</p>
       </form>
     </div>
   </div>
