@@ -1,0 +1,12 @@
+# Archives / backups
+*.rar
+*.zip
+
+# Local tooling
+.claude/settings.local.json
+.vercel/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
