@@ -303,6 +303,9 @@
   .map-card .mt b { display: block; font-weight: 700; font-size: 1rem; }
   .map-card .mt span { font-size: 0.88rem; color: var(--muted); }
 
+  .map-embed { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); background: var(--bg-soft); min-height: 460px; height: 100%; }
+  .map-embed iframe { display: block; width: 100%; height: 100%; min-height: 460px; border: 0; }
+
   /* form */
   .form-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); }
   .form-card h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }

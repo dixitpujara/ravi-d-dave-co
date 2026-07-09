@@ -272,60 +272,15 @@ export const SITE_MARKUP = String.raw`
           <span class="tx"><small>Office Hours</small><b>Mon – Sat, 9:30 AM – 7:00 PM</b></span>
         </li>
       </ul>
-      <a class="map-card" href="https://share.google/1mErnmKduaKa4WsQv" target="_blank" rel="noopener">
+      <a class="map-card" href="https://share.google/qBVehEa8OjuxZRlIq" target="_blank" rel="noopener">
         <span class="pin"><svg class="ico" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-        <span class="mt"><b>Find us on Google Maps</b><span>Get directions to our Surendranagar office</span></span>
+        <span class="mt"><b>Open in Google Maps</b><span>Get directions to our Surendranagar office</span></span>
         <svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M7 17 17 7M8 7h9v9"/></svg>
       </a>
     </div>
 
-    <div class="form-card reveal">
-      <h3>Send us a message</h3>
-      <p class="fsub">Fill in your details and we'll get back to you shortly.</p>
-      <form id="enquiryForm" novalidate>
-        <div class="form-row">
-          <div class="field">
-            <label for="f-name">Full name</label>
-            <input id="f-name" name="name" type="text" placeholder="Your name" required />
-          </div>
-          <div class="field">
-            <label for="f-phone">Phone</label>
-            <input id="f-phone" name="phone" type="tel" placeholder="Your phone number" required />
-          </div>
-        </div>
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" placeholder="you@example.com" />
-        </div>
-        <div class="field">
-          <label for="f-service">Service needed</label>
-          <select id="f-service" name="service">
-            <option value="">Select a service</option>
-            <option>Income Tax Return Filing</option>
-            <option>GST Registration &amp; Compliance</option>
-            <option>Tax Planning</option>
-            <option>Accounting &amp; Bookkeeping</option>
-            <option>Audit &amp; Assurance</option>
-            <option>Company &amp; LLP Registration</option>
-            <option>ROC Compliance</option>
-            <option>TDS Services</option>
-            <option>Payroll</option>
-            <option>Financial Consulting</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-msg">Message</label>
-          <textarea id="f-msg" name="message" placeholder="Tell us briefly how we can help…"></textarea>
-        </div>
-        <input type="text" name="botcheck" id="f-botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
-        <button class="btn btn-primary" type="submit" id="formSubmit">
-          <span class="btn-label">Send Message</span>
-          <svg class="ico" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-        </button>
-        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-        <p class="form-note">We'll reply by phone or email, usually within one business day.</p>
-      </form>
+    <div class="map-embed reveal">
+      <iframe title="Ravi D Dave & Co. — location on Google Maps" src="https://maps.google.com/maps?q=Ravi+D+Dave+and+Co+Chartered+Accountants,+Milan+Cinema+Road,+Ambedkarnagar,+Surendranagar,+Gujarat+363002&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
   </div>
 </section>
