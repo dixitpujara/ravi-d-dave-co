@@ -280,7 +280,7 @@ export const SITE_MARKUP = String.raw`
     </div>
 
     <div class="map-embed reveal">
-      <iframe title="Ravi D Dave & Co. — location on Google Maps" src="https://maps.google.com/maps?q=Ravi+D+Dave+and+Co+Chartered+Accountants,+Milan+Cinema+Road,+Ambedkarnagar,+Surendranagar,+Gujarat+363002&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <iframe title="Ravi D Dave & Co. — location on Google Maps" src="https://www.google.com/maps?q=CA+FIRM+-+Ravi+D+Dave+and+Co+Chartered+Accountants,+Surendranagar,+Gujarat&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
   </div>
 </section>
