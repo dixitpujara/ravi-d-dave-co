@@ -333,6 +333,7 @@ export const SITE_MARKUP = String.raw`
     </div>
     <div class="foot-bottom">
       <span>© <span id="yr"></span> Ravi D Dave &amp; Co. All rights reserved.</span>
+      <span class="foot-credit">Developed by <a href="https://harival.com" target="_blank" rel="noopener">Harival.com</a></span>
     </div>
   </div>
 </footer>
