@@ -96,9 +96,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/emblem.png", sizes: "128x128", type: "image/png" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: "/emblem.png" }],
+    apple: [{ url: "/icon.png", sizes: "512x512" }],
+    shortcut: [{ url: "/favicon.svg" }],
   },
   formatDetection: { telephone: true, email: true, address: true },
 };
